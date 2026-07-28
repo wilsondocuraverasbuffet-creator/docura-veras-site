@@ -1,15 +1,15 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Manifesto from './components/Manifesto';
-import About from './components/About';
-import Services from './components/Services';
-import Trust from './components/Trust';
-import Process from './components/Process';
-import Structure from './components/Structure';
-import Audiences from './components/Audiences';
-import Gallery from './components/Gallery';
-import QuoteForm from './components/QuoteForm';
-import Footer from './components/Footer';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { BrandIntro } from './components/BrandIntro';
+import { Hospitality } from './components/Hospitality';
+import { Experience } from './components/Experience';
+import { Method } from './components/Method';
+import { Structure } from './components/Structure';
+import { Portfolio } from './components/Portfolio';
+import { Audiences } from './components/Audiences';
+import { QuoteForm } from './components/QuoteForm';
+import { Footer } from './components/Footer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
   return (
@@ -17,17 +17,17 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Manifesto />
-        <About />
-        <Services />
-        <Trust />
-        <Process />
+        <BrandIntro />
+        <Hospitality />
+        <Experience />
+        <Method />
         <Structure />
+        <Portfolio />
         <Audiences />
-        <Gallery />
         <QuoteForm />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }

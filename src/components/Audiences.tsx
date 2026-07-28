@@ -1,17 +1,10 @@
 const audiences = ['Empresas', 'Convenções', 'Treinamentos', 'Feiras', 'Lançamentos', 'Corridas', 'Eventos privados', 'Condomínios'];
-
-export default function Audiences() {
+export function Audiences() {
   return (
-    <section className="audiences-section">
-      <div className="site-container audiences-grid">
-        <div>
-          <p className="eyebrow">Para quem atendemos</p>
-          <h2 className="heading-xl">Hospitalidade ajustada ao contexto de cada encontro.</h2>
-        </div>
-        <div className="audience-list">
-          {audiences.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></div>)}
-        </div>
-      </div>
+    <section className="audience section page-width">
+      <p className="eyebrow">Para quem atendemos</p>
+      <h2>Hospitalidade adequada ao contexto, ao público e à sua marca.</h2>
+      <div className="audience-list">{audiences.map((item, i) => <div key={item}><span>{String(i + 1).padStart(2, '0')}</span>{item}</div>)}</div>
     </section>
   );
 }

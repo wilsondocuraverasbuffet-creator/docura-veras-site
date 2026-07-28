@@ -1,13 +1,14 @@
-# Doçura Vera's — Site 3.1
+# Doçura Vera's — Site 4.0
 
-Website institucional premium em React + Vite.
+Website institucional premium em React + Vite, alinhado ao novo posicionamento:
+**Hospitalidade · Eventos · Experiências**.
 
-## Publicação no GitHub/Vercel
+## Publicar no GitHub/Vercel
 
-1. Remova os arquivos antigos do repositório (mantenha a pasta `.git`).
+1. Remova os arquivos antigos do repositório, mantendo apenas a pasta `.git`.
 2. Copie todo o conteúdo desta pasta para a raiz do repositório.
 3. Faça commit e push para a branch `main`.
-4. A Vercel iniciará o deploy automaticamente.
+4. A Vercel iniciará o novo deploy automaticamente.
 
 ## Desenvolvimento local
 
@@ -16,7 +17,7 @@ npm install
 npm run dev
 ```
 
-## Build
+## Validação de produção
 
 ```bash
 npm run build
