@@ -1,7 +1,7 @@
 # Doçura Vera's — Site 4.0
 
 Website institucional premium em React + Vite, alinhado ao novo posicionamento:
-**Hospitalidade · Eventos · Experiências**.
+**Especialistas em Catering Corporativo**.
 
 ## Publicar no GitHub/Vercel
 

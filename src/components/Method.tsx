@@ -3,7 +3,7 @@ const steps = [
   ['02', 'Produção', 'Organizamos insumos, equipa e cada detalhe da apresentação.'],
   ['03', 'Logística', 'Planejamos transporte, horários e necessidades de acesso.'],
   ['04', 'Montagem', 'Construímos uma experiência visualmente coerente e funcional.'],
-  ['05', 'Hospitalidade', 'Recebemos e servimos com atenção, agilidade e discrição.'],
+  ['05', 'Atendimento', 'Recebemos e servimos com atenção, agilidade e discrição.'],
   ['06', 'Encerramento', 'Finalizamos a operação com organização e responsabilidade.'],
 ];
 

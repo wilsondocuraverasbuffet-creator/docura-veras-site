@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Doçura Vera's",
-  descriptor: "Hospitalidade · Eventos · Experiências",
+  descriptor: "Especialistas em Catering Corporativo",
   signature: "Excelência servida em cada detalhe.",
   url: "https://www.docuraverasbuffet.com.br",
   contact: {

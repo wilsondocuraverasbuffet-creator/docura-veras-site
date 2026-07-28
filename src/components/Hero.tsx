@@ -5,11 +5,11 @@ export function Hero() {
       <div className="hero-shade" />
       <div className="hero-content page-width">
         <p className="eyebrow light">São Paulo · Rio de Janeiro</p>
-        <h1>Hospitalidade que representa a sua marca.</h1>
-        <p className="hero-lead">Experiências gastronómicas para empresas e eventos que valorizam excelência, organização e cuidado em cada detalhe.</p>
+        <h1>Especialistas em Catering Corporativo.</h1>
+        <p className="hero-lead">Coffee breaks, eventos corporativos e soluções gastronômicas para empresas que valorizam excelência, organização e cuidado em cada detalhe.</p>
         <div className="hero-actions">
           <a className="button button-gold" href="#contato">Solicitar orçamento</a>
-          <a className="text-link light-link" href="#hospitalidade">Conhecer nossa hospitalidade <span>↘</span></a>
+          <a className="text-link light-link" href="#catering">Conhecer nossas soluções <span>↘</span></a>
         </div>
       </div>
       <div className="hero-foot page-width">

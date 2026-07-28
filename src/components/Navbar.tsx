@@ -3,7 +3,7 @@ import { SITE } from '../config/site';
 
 const links = [
   ['A marca', '#marca'],
-  ['Hospitalidade', '#hospitalidade'],
+  ['Catering', '#catering'],
   ['Estrutura', '#estrutura'],
   ['Portfólio', '#portfolio'],
   ['Contato', '#contato'],

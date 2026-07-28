@@ -1,7 +1,7 @@
 const photos = [
   ['/images/gallery-2.jpg', 'Coffee Break', 'Corporativo'],
   ['/images/gallery-3.jpg', 'Recepção', 'Experiência'],
-  ['/images/gallery-6.jpg', 'Eventos', 'Hospitalidade'],
+  ['/images/gallery-6.jpg', 'Eventos', 'Catering'],
   ['/images/service-coqueteis.jpg', 'Cocktail', 'Conexões'],
   ['/images/service-convencoes.jpg', 'Convenções', 'Presença'],
 ];
