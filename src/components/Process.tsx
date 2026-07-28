@@ -1,78 +1,20 @@
-import { useInView } from "../hooks/useInView";
-
-const STEPS = [
-  {
-    num: "01",
-    title: "Entendimento da necessidade",
-    desc: "Ouvimos sua visão, compreendemos o perfil dos convidados e os objetivos do evento.",
-  },
-  {
-    num: "02",
-    title: "Planejamento personalizado",
-    desc: "Elaboramos uma proposta sob medida: cardápio, logística, decoração e cronograma.",
-  },
-  {
-    num: "03",
-    title: "Produção artesanal",
-    desc: "Cada item é preparado com ingredientes selecionados pela nossa equipe de chefs.",
-  },
-  {
-    num: "04",
-    title: "Montagem elegante",
-    desc: "Cuidamos de cada detalhe da ambientação, das louças ao último guardanapo.",
-  },
-  {
-    num: "05",
-    title: "Atendimento durante o evento",
-    desc: "Nossa equipe garante um serviço fluido, discreto e impecável do início ao fim.",
-  },
-  {
-    num: "06",
-    title: "Encerramento impecável",
-    desc: "Desmontagem silenciosa e organizada. Você aproveita; nós resolvemos o resto.",
-  },
+const steps = [
+  ['01', 'Escuta', 'Compreendemos o evento, os convidados e a imagem que deseja transmitir.'],
+  ['02', 'Planeamento', 'Definimos cardápio, estrutura, logística, equipa e cronograma.'],
+  ['03', 'Produção', 'Preparamos cada item com controlo, qualidade e apresentação.'],
+  ['04', 'Montagem', 'Organizamos o espaço com discrição, precisão e pontualidade.'],
+  ['05', 'Hospitalidade', 'Acompanhamos o serviço para que tudo flua com naturalidade.'],
 ];
 
 export default function Process() {
-  const { ref, isInView } = useInView();
-
   return (
-    <section
-      ref={ref}
-      className={`fade-section ${isInView ? "visible" : ""}`}
-    >
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-        <div className="mb-16 text-center">
-          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-gold">
-            Processo
-          </span>
-          <h2 className="mx-auto mt-4 max-w-xl font-serif text-3xl leading-snug tracking-wide text-charcoal lg:text-4xl">
-            <em>Como trabalhamos</em>
-          </h2>
-        </div>
-
-        <div className="mx-auto grid max-w-4xl gap-0 divide-y divide-warm-gray-light/40">
-          {STEPS.map((step, i) => (
-            <div
-              key={i}
-              className="stagger-child grid grid-cols-[auto_1fr] gap-6 py-8 lg:grid-cols-[60px_200px_1fr] lg:gap-10 lg:py-10"
-            >
-              <span className="font-serif text-3xl text-gold lg:text-4xl">
-                {step.num}
-              </span>
-              <div>
-                <h3 className="text-sm font-semibold tracking-[0.12em] uppercase text-charcoal">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-warm-gray lg:hidden">
-                  {step.desc}
-                </p>
-              </div>
-              <p className="hidden text-[15px] leading-relaxed text-warm-gray lg:block">
-                {step.desc}
-              </p>
-            </div>
-          ))}
+    <section id="metodo" className="bg-ink py-24 text-white lg:py-36">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+        <div className="grid gap-14 lg:grid-cols-[.8fr_1.2fr]">
+          <div><p className="eyebrow text-sand">Como trabalhamos</p><h2 className="heading-xl mt-5 text-white">Um evento impecável começa muito antes da chegada dos convidados.</h2></div>
+          <div className="border-t border-white/15">
+            {steps.map(([n, title, text]) => <div key={n} className="grid gap-5 border-b border-white/15 py-8 md:grid-cols-[60px_180px_1fr]"><span className="text-[10px] tracking-[.2em] text-gold">{n}</span><h3 className="font-display text-2xl">{title}</h3><p className="max-w-xl text-sm leading-7 text-white/60">{text}</p></div>)}
+          </div>
         </div>
       </div>
     </section>

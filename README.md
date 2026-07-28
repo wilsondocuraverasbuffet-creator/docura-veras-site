@@ -1,23 +1,31 @@
-# Doçura Vera's Buffet — Site v2
+# Doçura Vera's — Site 3.0
 
-Site institucional em React + Vite.
+Versão premium alinhada ao Brand Book Essencial.
 
-## Dados configurados
-- WhatsApp: (11) 93947-0374
-- E-mail: docuraverasbuffet@yahoo.com.br
-- Instagram: @docuraverasbuffet
-- Domínio: docuraverasbuffet.com.br
-- Atendimento: São Paulo e Rio de Janeiro
+## Publicação
 
-## Como abrir no computador
-1. Instale o Node.js LTS.
-2. Abra o terminal dentro desta pasta.
-3. Execute `npm install`.
-4. Execute `npm run dev`.
-5. Abra o endereço mostrado no terminal.
+1. Substitua os arquivos do repositório atual por estes.
+2. No GitHub, faça commit e push.
+3. A Vercel iniciará o novo deploy automaticamente.
 
-## Como gerar a versão de publicação
-Execute `npm run build`. A pasta final será `dist`.
+## Desenvolvimento local
 
-## Próxima personalização recomendada
-Substituir as imagens demonstrativas da pasta `public/images` por fotografias reais dos eventos da Doçura Vera's e inserir a logo oficial.
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Principais alterações
+
+- Reposicionamento para Hospitalidade · Eventos · Experiências
+- Nova identidade visual editorial
+- Home responsiva e otimizada para dispositivos móveis
+- Formulário inteligente com envio organizado para WhatsApp
+- SEO, Open Graph e dados estruturados atualizados
+- Conteúdo real da marca e 25 anos de experiência

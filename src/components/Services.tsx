@@ -1,95 +1,28 @@
-import { useInView } from "../hooks/useInView";
-
-const SERVICES = [
-  {
-    title: "Coffee Break Corporativo",
-    img: "/images/service-coffee-break.jpg",
-    alt: "Estação de coffee break premium com café especial, doces finos e mini sanduíches gourmet",
-  },
-  {
-    title: "Eventos Empresariais",
-    img: "/images/service-eventos-empresariais.jpg",
-    alt: "Evento empresarial com buffet sofisticado e executivos interagindo",
-  },
-  {
-    title: "Eventos Esportivos",
-    img: "/images/service-eventos-esportivos.jpg",
-    alt: "Catering premium para evento esportivo com estação de alimentação elegante",
-  },
-  {
-    title: "Treinamentos",
-    img: "/images/service-treinamentos.jpg",
-    alt: "Sala de treinamento corporativo com coffee break refinado",
-  },
-  {
-    title: "Convenções",
-    img: "/images/service-convencoes.jpg",
-    alt: "Convenção corporativa com serviço de catering premium em auditório",
-  },
-  {
-    title: "Lançamentos",
-    img: "/images/service-lancamentos.jpg",
-    alt: "Evento de lançamento de produto com mesa de coquetel premium",
-  },
-  {
-    title: "Coquetéis",
-    img: "/images/service-coqueteis.jpg",
-    alt: "Coquetel executivo com drinks sofisticados e canapés artesanais",
-  },
-  {
-    title: "Eventos Sociais",
-    img: "/images/service-eventos-sociais.jpg",
-    alt: "Evento social elegante com buffet refinado e convidados bem vestidos",
-  },
-  {
-    title: "Buffet Personalizado",
-    img: "/images/service-buffet-personalizado.jpg",
-    alt: "Buffet personalizado com mesa posta impecável e gastronomia artesanal",
-  },
+const services = [
+  { n: '01', title: 'Coffee Break Corporativo', text: 'Receções elegantes para reuniões, treinamentos, convenções e encontros de negócios.', image: '/images/service-coffee-break.jpg' },
+  { n: '02', title: 'Eventos Empresariais', text: 'Hospitalidade alinhada à identidade e ao nível de exigência da sua empresa.', image: '/images/service-eventos-empresariais.jpg' },
+  { n: '03', title: 'Eventos Esportivos', text: 'Operação ágil, logística precisa e cardápios pensados para atletas, equipas e convidados.', image: '/images/service-eventos-esportivos.jpg' },
+  { n: '04', title: 'Eventos Sociais', text: 'Celebrações acolhedoras com serviço personalizado, apresentação refinada e cuidado genuíno.', image: '/images/service-eventos-sociais.jpg' },
 ];
 
 export default function Services() {
-  const { ref, isInView } = useInView();
-
   return (
-    <section
-      id="servicos"
-      ref={ref}
-      className={`fade-section ${isInView ? "visible" : ""}`}
-    >
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-        <div className="mb-16 text-center">
-          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-gold">
-            Serviços
-          </span>
-          <h2 className="mx-auto mt-4 max-w-xl font-serif text-3xl leading-snug tracking-wide text-charcoal lg:text-4xl">
-            <em>Soluções para cada ocasião</em>
-          </h2>
+    <section id="hospitalidade" className="bg-white py-24 lg:py-36">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+        <div className="mb-16 grid gap-6 lg:grid-cols-2 lg:items-end">
+          <div><p className="eyebrow">Nossa hospitalidade</p><h2 className="heading-xl mt-5">Experiências pensadas para diferentes encontros.</h2></div>
+          <p className="body-copy max-w-xl lg:justify-self-end">Criamos soluções à medida, com cardápio, estrutura, equipa e apresentação definidos de acordo com o perfil de cada evento.</p>
         </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s, i) => (
-            <div
-              key={i}
-              className="stagger-child group relative aspect-[4/3] overflow-hidden"
-            >
-              <img
-                src={s.img}
-                alt={s.alt}
-                width={600}
-                height={450}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              {/* Title */}
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <h3 className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white">
-                  {s.title}
-                </h3>
+        <div className="space-y-6">
+          {services.map((s, i) => (
+            <article key={s.title} className={`group grid min-h-[480px] overflow-hidden bg-stone lg:grid-cols-2 ${i % 2 ? 'lg:[&>div:first-child]:order-2' : ''}`}>
+              <div className="overflow-hidden"><img src={s.image} alt={s.title} loading="lazy" className="h-full min-h-[360px] w-full object-cover transition duration-1000 group-hover:scale-[1.03]" /></div>
+              <div className="flex flex-col justify-between p-9 lg:p-16">
+                <span className="text-[10px] font-semibold tracking-[.25em] text-gold">{s.n}</span>
+                <div className="mt-20"><h3 className="font-display text-4xl leading-tight text-ink lg:text-5xl">{s.title}</h3><p className="body-copy mt-6 max-w-md">{s.text}</p></div>
+                <a href="#orcamento" className="mt-10 inline-flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[.2em] text-ink"><span className="h-px w-10 bg-gold transition-all group-hover:w-16" />Solicitar proposta</a>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

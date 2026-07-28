@@ -1,49 +1,19 @@
-import { useInView } from "../hooks/useInView";
-
-const GALLERY = [
-  { src: "/images/gallery-1.jpg", alt: "Detalhe de doces finos sobre louça branca com acabamento dourado", span: "lg:col-span-2 lg:row-span-2" },
-  { src: "/images/gallery-2.jpg", alt: "Mesa de coffee break corporativo completa com café, sucos e frutas", span: "" },
-  { src: "/images/gallery-3.jpg", alt: "Arranjo floral discreto sobre mesa de evento executivo", span: "" },
-  { src: "/images/gallery-4.jpg", alt: "Mini sanduíches gourmet em bandeja de prata", span: "lg:col-span-2" },
-  { src: "/images/gallery-5.jpg", alt: "Auditório corporativo com serviço de catering elegante ao fundo", span: "" },
-  { src: "/images/gallery-6.jpg", alt: "Detalhe de café sendo servido em xícara de porcelana", span: "" },
+const images = [
+  ['/images/gallery-1.jpg', 'Coffee break corporativo'],
+  ['/images/gallery-2.jpg', 'Apresentação gastronómica'],
+  ['/images/gallery-3.jpg', 'Montagem de evento'],
+  ['/images/gallery-4.jpg', 'Hospitalidade em cada detalhe'],
+  ['/images/gallery-5.jpg', 'Evento empresarial'],
+  ['/images/gallery-6.jpg', 'Experiência Doçura Vera’s'],
 ];
 
 export default function Gallery() {
-  const { ref, isInView } = useInView();
-
   return (
-    <section
-      id="galeria"
-      ref={ref}
-      className={`fade-section bg-white ${isInView ? "visible" : ""}`}
-    >
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
-        <div className="mb-16 text-center">
-          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-gold">
-            Galeria
-          </span>
-          <h2 className="mx-auto mt-4 max-w-xl font-serif text-3xl leading-snug tracking-wide text-charcoal lg:text-4xl">
-            <em>Momentos que inspiram</em>
-          </h2>
-        </div>
-
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[280px]">
-          {GALLERY.map((g, i) => (
-            <div
-              key={i}
-              className={`stagger-child group overflow-hidden ${g.span}`}
-            >
-              <img
-                src={g.src}
-                alt={g.alt}
-                width={800}
-                height={600}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-            </div>
-          ))}
+    <section id="portfolio" className="bg-ivory py-24 lg:py-36">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+        <div className="mb-14 grid gap-6 lg:grid-cols-2"><div><p className="eyebrow">Portfólio</p><h2 className="heading-xl mt-5">Cenários que acolhem. Detalhes que permanecem.</h2></div><p className="body-copy max-w-lg self-end lg:justify-self-end">Uma seleção de experiências que traduzem a nossa forma de receber: elegante, organizada e sempre atenta ao contexto de cada cliente.</p></div>
+        <div className="grid auto-rows-[230px] gap-4 md:grid-cols-12 md:auto-rows-[280px]">
+          {images.map(([src, alt], i) => <figure key={src} className={`group relative overflow-hidden ${i === 0 ? 'md:col-span-7 md:row-span-2' : i === 1 ? 'md:col-span-5' : i === 2 ? 'md:col-span-5' : i === 3 ? 'md:col-span-4' : 'md:col-span-4'}`}><img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover transition duration-1000 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-5 pt-16 text-[10px] uppercase tracking-[.2em] text-white opacity-0 transition group-hover:opacity-100">{alt}</figcaption></figure>)}
         </div>
       </div>
     </section>

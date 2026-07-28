@@ -1,106 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  --color-beige: #F6F2EC;
-  --color-off-white: #FAFAF7;
-  --color-gold: #C5A572;
-  --color-gold-dark: #B09060;
-  --color-gold-light: #D4BC8E;
-  --color-charcoal: #2C2C2C;
-  --color-warm-gray: #8A8279;
-  --color-warm-gray-light: #B5AFA8;
-
-  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-ivory: #f7f3ec;
+  --color-stone: #eee8df;
+  --color-sand: #d9c4a3;
+  --color-gold: #ae8a55;
+  --color-gold-dark: #8e6b3d;
+  --color-ink: #27231f;
+  --color-taupe: #81776b;
+  --color-line: #d9d1c7;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
 }
 
-/* ── Base resets ─────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--color-ivory); color: var(--color-ink); font-family: var(--font-sans); }
+::selection { background: var(--color-sand); color: var(--color-ink); }
+img { display: block; }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+.nav-link { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; transition: color .25s; }
+.nav-link:hover { color: var(--color-gold); }
+.eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--color-gold); }
+.heading-xl { font-family: var(--font-display); font-size: clamp(2.7rem, 5vw, 5.1rem); line-height: .98; letter-spacing: -.02em; color: var(--color-ink); }
+.body-copy { font-size: 14px; line-height: 1.9; color: var(--color-taupe); }
+.btn-primary,.btn-dark,.btn-ghost { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 28px; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; transition:.3s; }
+.btn-primary { background:var(--color-gold); color:#fff; }
+.btn-primary:hover { background:var(--color-gold-dark); }
+.btn-dark { background:var(--color-ink); color:#fff; }
+.btn-dark:hover { background:var(--color-gold); }
+.btn-ghost { border:1px solid rgba(255,255,255,.55); color:#fff; }
+.btn-ghost:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+.field-label,.footer-title { font-size:9px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--color-taupe); }
+.footer-title { color:var(--color-gold); }
+.footer-link { display:block; margin-top:10px; font-size:14px; color:rgba(255,255,255,.65); transition:.25s; }
+.footer-link:hover { color:var(--color-sand); }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1); }
+.reveal.visible { opacity:1; transform:none; }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-body {
-  font-family: var(--font-sans);
-  color: var(--color-charcoal);
-  background-color: var(--color-beige);
-}
-
-/* ── Fade-in animation ──────────────────────────────── */
-
-.fade-section {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger children */
-.fade-section.visible .stagger-child {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stagger-child {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.stagger-child:nth-child(1) { transition-delay: 0.05s; }
-.stagger-child:nth-child(2) { transition-delay: 0.1s; }
-.stagger-child:nth-child(3) { transition-delay: 0.15s; }
-.stagger-child:nth-child(4) { transition-delay: 0.2s; }
-.stagger-child:nth-child(5) { transition-delay: 0.25s; }
-.stagger-child:nth-child(6) { transition-delay: 0.3s; }
-.stagger-child:nth-child(7) { transition-delay: 0.35s; }
-.stagger-child:nth-child(8) { transition-delay: 0.4s; }
-.stagger-child:nth-child(9) { transition-delay: 0.45s; }
-
-/* ── Parallax hero ──────────────────────────────────── */
-
-.parallax-bg {
-  will-change: transform;
-  transition: transform 0.1s linear;
-}
-
-/* ── Selection colour ───────────────────────────────── */
-
-::selection {
-  background-color: var(--color-gold-light);
-  color: var(--color-charcoal);
-}
-
-/* ── Scrollbar (webkit) ─────────────────────────────── */
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-beige);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-warm-gray-light);
-  border-radius: 3px;
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }
