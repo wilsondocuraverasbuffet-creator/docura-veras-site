@@ -22,3 +22,4 @@ npm run dev
 ```bash
 npm run build
 ```
+Novo deploy após ajuste da Vercel.
