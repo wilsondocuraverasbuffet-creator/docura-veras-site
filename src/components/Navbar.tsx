@@ -5,6 +5,7 @@ const links = [
   ['A marca', '#sobre'],
   ['Hospitalidade', '#hospitalidade'],
   ['Como trabalhamos', '#metodo'],
+  ['Estrutura', '#estrutura'],
   ['Portfólio', '#portfolio'],
   ['Orçamento', '#orcamento'],
 ];
