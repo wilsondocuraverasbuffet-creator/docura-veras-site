@@ -6,7 +6,7 @@ const links = [
   ['Coffee Break', '/coffee-break'],
   ['Eventos Esportivos', '/eventos-esportivos'],
   ['Catering Corporativo', '/catering-corporativo'],
-  ['Eventos Corporativos', '/#catering'],
+  ['Eventos Corporativos', '/eventos-corporativos'],
   ['Portfólio', '/#portfolio'],
   ['Sobre', '/#marca'],
 ] as const;

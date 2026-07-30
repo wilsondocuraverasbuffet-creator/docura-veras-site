@@ -13,6 +13,7 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { CoffeeBreakPage } from './pages/CoffeeBreakPage';
 import { SportsEventsPage } from './pages/SportsEventsPage';
 import { CorporateCateringPage } from './pages/CorporateCateringPage';
+import { CorporateEventsPage } from './pages/CorporateEventsPage';
 
 function HomePage() {
   return <><Navbar /><main><Hero /><BrandIntro /><Hospitality /><Experience /><Method /><Structure /><Portfolio /><Audiences /><QuoteForm /></main><Footer /><FloatingWhatsApp /></>;
@@ -23,5 +24,6 @@ export default function App() {
   if (path === '/coffee-break') return <CoffeeBreakPage />;
   if (path === '/eventos-esportivos') return <SportsEventsPage />;
   if (path === '/catering-corporativo') return <CorporateCateringPage />;
+  if (path === '/eventos-corporativos') return <CorporateEventsPage />;
   return <HomePage />;
 }
