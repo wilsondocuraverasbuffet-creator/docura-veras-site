@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { SITE } from '../config/site';
 
-const initial = { name: '', company: '', city: '', date: '', time: '', guests: '', type: window.location.pathname.includes('coffee-break') ? 'Coffee Break Corporativo' : window.location.pathname.includes('eventos-esportivos') ? 'Evento Esportivo' : '', dietary: '', notes: '' };
+const initial = { name: '', company: '', city: '', date: '', time: '', guests: '', type: window.location.pathname.includes('coffee-break') ? 'Coffee Break Corporativo' : window.location.pathname.includes('eventos-esportivos') ? 'Evento Esportivo' : window.location.pathname.includes('catering-corporativo') ? 'Catering Corporativo' : '', dietary: '', notes: '' };
 export function QuoteForm() {
   const [form, setForm] = useState(initial);
   const update = (field: keyof typeof initial, value: string) => setForm(current => ({ ...current, [field]: value }));

@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { CoffeeBreakPage } from './pages/CoffeeBreakPage';
 import { SportsEventsPage } from './pages/SportsEventsPage';
+import { CorporateCateringPage } from './pages/CorporateCateringPage';
 
 function HomePage() {
   return <><Navbar /><main><Hero /><BrandIntro /><Hospitality /><Experience /><Method /><Structure /><Portfolio /><Audiences /><QuoteForm /></main><Footer /><FloatingWhatsApp /></>;
@@ -21,5 +22,6 @@ export default function App() {
   const path = window.location.pathname.replace(/\/$/, '') || '/';
   if (path === '/coffee-break') return <CoffeeBreakPage />;
   if (path === '/eventos-esportivos') return <SportsEventsPage />;
+  if (path === '/catering-corporativo') return <CorporateCateringPage />;
   return <HomePage />;
 }

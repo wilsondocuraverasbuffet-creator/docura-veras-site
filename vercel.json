@@ -3,6 +3,8 @@
     { "source": "/coffee-break", "destination": "/index.html" },
     { "source": "/coffee-break/", "destination": "/index.html" },
     { "source": "/eventos-esportivos", "destination": "/index.html" },
-    { "source": "/eventos-esportivos/", "destination": "/index.html" }
+    { "source": "/eventos-esportivos/", "destination": "/index.html" },
+    { "source": "/catering-corporativo", "destination": "/index.html" },
+    { "source": "/catering-corporativo/", "destination": "/index.html" }
   ]
 }
