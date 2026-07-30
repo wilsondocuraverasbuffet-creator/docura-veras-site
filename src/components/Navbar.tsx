@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { SITE } from '../config/site';
 
 const links = [
-  ['A marca', '#marca'],
-  ['Catering', '#catering'],
-  ['Estrutura', '#estrutura'],
-  ['Portfólio', '#portfolio'],
-  ['Contato', '#contato'],
+  ['Início', '/'],
+  ['Coffee Break', '/coffee-break'],
+  ['Eventos Esportivos', '/#catering'],
+  ['Catering Corporativo', '/#catering'],
+  ['Eventos Corporativos', '/#catering'],
+  ['Portfólio', '/#portfolio'],
+  ['Sobre', '/#marca'],
 ] as const;
 
 export function Navbar() {
@@ -22,7 +24,7 @@ export function Navbar() {
 
   return (
     <header className={`nav-shell ${scrolled ? 'is-scrolled' : ''}`}>
-      <a className="brand-lockup" href="#top" aria-label="Doçura Vera's - início">
+      <a className="brand-lockup" href="/" aria-label="Doçura Vera's - início">
         <span className="brand-name">Doçura Vera's</span>
         <span className="brand-descriptor">{SITE.descriptor}</span>
       </a>
@@ -30,8 +32,8 @@ export function Navbar() {
         <span /><span />
       </button>
       <nav className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Navegação principal">
-        {links.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}
-        <a className="nav-cta" href="#contato" onClick={() => setOpen(false)}>Solicitar orçamento</a>
+        {links.map(([label, href]) => <a key={href + label} href={href} onClick={() => setOpen(false)}>{label}</a>)}
+        <a className="nav-cta" href="/#contato" onClick={() => setOpen(false)}>Solicitar orçamento</a>
       </nav>
     </header>
   );

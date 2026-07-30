@@ -25,7 +25,7 @@ export function QuoteForm() {
         <label>Data<input required type="date" value={form.date} onChange={e => update('date', e.target.value)} /></label>
         <label>Horário<input type="time" value={form.time} onChange={e => update('time', e.target.value)} /></label>
         <label>Número de convidados<input required type="number" min="1" value={form.guests} onChange={e => update('guests', e.target.value)} placeholder="Ex.: 100" /></label>
-        <label className="wide">Tipo de evento<select required value={form.type} onChange={e => update('type', e.target.value)}><option value="">Selecione</option><option>Coffee Break Corporativo</option><option>Evento Corporativo</option><option>Evento Esportivo</option><option>Evento Social</option><option>Cocktail</option><option>Outro</option></select></label>
+        <label className="wide">Tipo de evento<select required value={form.type} onChange={e => update('type', e.target.value)}><option value="">Selecione</option><option>Coffee Break Corporativo</option><option>Evento Corporativo</option><option>Evento Esportivo</option><option>Catering Corporativo</option><option>Cocktail</option><option>Outro</option></select></label>
         <label className="wide">Observações<textarea value={form.notes} onChange={e => update('notes', e.target.value)} placeholder="Conte-nos mais sobre o evento" rows={4} /></label>
         <button className="button button-gold wide" type="submit">Enviar pelo WhatsApp <span>↗</span></button>
       </form>

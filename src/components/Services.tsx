@@ -2,7 +2,7 @@ const services = [
   { n: '01', title: 'Coffee Break Corporativo', text: 'Receções elegantes para reuniões, treinamentos, convenções e encontros de negócios.', image: '/images/service-coffee-break.jpg' },
   { n: '02', title: 'Eventos Empresariais', text: 'Hospitalidade alinhada à identidade e ao nível de exigência da sua empresa.', image: '/images/service-eventos-empresariais.jpg' },
   { n: '03', title: 'Eventos Esportivos', text: 'Operação ágil, logística precisa e cardápios pensados para atletas, equipas e convidados.', image: '/images/service-eventos-esportivos.jpg' },
-  { n: '04', title: 'Eventos Sociais', text: 'Celebrações acolhedoras com serviço personalizado, apresentação refinada e cuidado genuíno.', image: '/images/service-eventos-sociais.jpg' },
+  { n: '04', title: 'Catering Corporativo', text: 'Soluções personalizadas para encontros empresariais, ações de marca e operações corporativas.', image: '/images/service-lancamentos.jpg' },
 ];
 
 export default function Services() {

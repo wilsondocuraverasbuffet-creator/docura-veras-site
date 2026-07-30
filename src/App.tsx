@@ -10,24 +10,13 @@ import { Audiences } from './components/Audiences';
 import { QuoteForm } from './components/QuoteForm';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { CoffeeBreakPage } from './pages/CoffeeBreakPage';
+
+function HomePage() {
+  return <><Navbar /><main><Hero /><BrandIntro /><Hospitality /><Experience /><Method /><Structure /><Portfolio /><Audiences /><QuoteForm /></main><Footer /><FloatingWhatsApp /></>;
+}
 
 export default function App() {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <BrandIntro />
-        <Hospitality />
-        <Experience />
-        <Method />
-        <Structure />
-        <Portfolio />
-        <Audiences />
-        <QuoteForm />
-      </main>
-      <Footer />
-      <FloatingWhatsApp />
-    </>
-  );
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  return path === '/coffee-break' ? <CoffeeBreakPage /> : <HomePage />;
 }

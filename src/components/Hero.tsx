@@ -14,7 +14,7 @@ export function Hero() {
       </div>
       <div className="hero-foot page-width">
         <span>25 anos de experiência</span>
-        <span>Eventos corporativos e sociais</span>
+        <span>Coffee breaks e eventos corporativos</span>
         <span>Atendimento personalizado</span>
       </div>
     </section>

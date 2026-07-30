@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/coffee-break", "destination": "/index.html" },
+    { "source": "/coffee-break/", "destination": "/index.html" }
+  ]
+}

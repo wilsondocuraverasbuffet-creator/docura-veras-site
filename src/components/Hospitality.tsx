@@ -2,7 +2,7 @@ const services = [
   { number: '01', title: 'Coffee Break Corporativo', text: 'Recepções elegantes para reuniões, treinamentos, convenções e encontros estratégicos.', image: '/images/service-coffee-break.jpg' },
   { number: '02', title: 'Eventos Corporativos', text: 'Soluções completas para lançamentos, feiras, confraternizações, cocktails e ações de marca.', image: '/images/service-eventos-empresariais.jpg' },
   { number: '03', title: 'Eventos Esportivos', text: 'Operação ágil e estruturada para corridas, provas, ativações e experiências de grande fluxo.', image: '/images/service-eventos-esportivos.jpg' },
-  { number: '04', title: 'Eventos Sociais', text: 'Catering personalizado para celebrações, encontros privados e ocasiões especiais.', image: '/images/service-eventos-sociais.jpg' },
+  { number: '04', title: 'Catering Corporativo', text: 'Soluções personalizadas para reuniões, convenções, treinamentos, lançamentos e ações de marca.', image: '/images/service-lancamentos.jpg' },
 ];
 
 export function Hospitality() {
@@ -20,7 +20,7 @@ export function Hospitality() {
               <span className="service-number">{service.number}</span>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
-              <a href="#contato" className="text-link light-link">Planejar este evento <span>↘</span></a>
+              <a href={service.title === 'Coffee Break Corporativo' ? '/coffee-break' : '#contato'} className="text-link light-link">Planejar este evento <span>↘</span></a>
             </div>
           </article>
         ))}
