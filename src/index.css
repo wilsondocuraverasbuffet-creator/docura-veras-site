@@ -261,3 +261,54 @@ p { line-height: 1.75; }
   .cb-gallery-grid { display:flex; flex-direction:column; }.cb-gallery-grid figure { height:330px; }
   .cb-benefits article { gap:15px; }.cb-benefits h3 { font-size:32px; }
 }
+
+/* V3.1 refinements */
+.reveal { opacity:0; transform:translateY(34px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.65,.25,1); }
+.reveal.is-visible { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+.cb-hero { min-height:100svh; padding-bottom:130px; }
+.cb-hero-content { max-width:1260px; }
+.cb-hero h1 { max-width:1180px; font-size:clamp(58px,6.75vw,104px); line-height:.91; }
+.cb-hero .button { min-width:270px; }
+.nav-links { gap:40px; }
+
+.cb-trust { background:#1b1915; color:#f7f0e4; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); }
+.cb-trust-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+.cb-trust-grid > .reveal { border-right:1px solid rgba(255,255,255,.12); }
+.cb-trust-grid > .reveal:last-child { border-right:0; }
+.cb-trust-item { min-height:145px; padding:30px 34px; display:flex; flex-direction:column; justify-content:center; }
+.cb-trust-item strong { font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:500; line-height:1; color:#d3b47a; }
+.cb-trust-item span { margin-top:12px; font-size:9px; text-transform:uppercase; letter-spacing:.14em; color:rgba(255,255,255,.66); }
+
+.cb-benefits article { transition:background .25s, padding .25s; }
+.cb-benefits article:hover { background:rgba(180,145,85,.07); padding-left:18px; padding-right:18px; }
+.cb-menu-grid article { transition:background .3s; }
+.cb-menu-grid article:hover { background:rgba(255,255,255,.035); }
+.cb-gallery-grid figure { position:relative; }
+.cb-gallery-grid figure::after { content:''; position:absolute; inset:0; border:1px solid rgba(255,255,255,.18); pointer-events:none; }
+.cb-faq details[open] summary { color:#9f7d43; }
+.cb-faq details[open] summary span { transform:rotate(45deg); }
+.cb-faq summary span { transition:transform .25s; }
+.button, .text-link, .nav-links a { transition:transform .25s, opacity .25s, background .25s; }
+.text-link:hover { transform:translateX(4px); }
+
+@media (max-width:1200px) {
+  .nav-links { gap:24px; font-size:8px; }
+  .nav-shell { padding-inline:24px; }
+}
+@media (max-width:900px) {
+  .cb-hero { min-height:900px; padding-bottom:100px; }
+  .cb-trust-grid { grid-template-columns:1fr 1fr; }
+  .cb-trust-grid > .reveal:nth-child(2) { border-right:0; }
+  .cb-trust-grid > .reveal:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.12); }
+}
+@media (max-width:560px) {
+  .cb-hero { min-height:850px; }
+  .cb-hero h1 { font-size:47px; }
+  .cb-trust-grid { grid-template-columns:1fr; }
+  .cb-trust-grid > .reveal { border-right:0; border-bottom:1px solid rgba(255,255,255,.12); }
+  .cb-trust-grid > .reveal:last-child { border-bottom:0; }
+  .cb-trust-item { min-height:115px; padding:24px 18px; }
+  .cb-trust-item strong { font-size:32px; }
+}

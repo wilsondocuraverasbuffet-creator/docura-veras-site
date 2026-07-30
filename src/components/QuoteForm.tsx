@@ -1,13 +1,13 @@
 import { FormEvent, useState } from 'react';
 import { SITE } from '../config/site';
 
-const initial = { name: '', company: '', city: '', date: '', time: '', guests: '', type: '', notes: '' };
+const initial = { name: '', company: '', city: '', date: '', time: '', guests: '', type: window.location.pathname.includes('coffee-break') ? 'Coffee Break Corporativo' : '', dietary: '', notes: '' };
 export function QuoteForm() {
   const [form, setForm] = useState(initial);
   const update = (field: keyof typeof initial, value: string) => setForm(current => ({ ...current, [field]: value }));
   const submit = (event: FormEvent) => {
     event.preventDefault();
-    const message = `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${form.name}\nEmpresa: ${form.company || 'Não informado'}\nCidade: ${form.city}\nData: ${form.date}\nHorário: ${form.time || 'A definir'}\nConvidados: ${form.guests}\nTipo de evento: ${form.type}\nObservações: ${form.notes || 'Sem observações'}`;
+    const message = `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${form.name}\nEmpresa: ${form.company || 'Não informado'}\nCidade: ${form.city}\nData: ${form.date}\nHorário: ${form.time || 'A definir'}\nConvidados: ${form.guests}\nTipo de evento: ${form.type}\nRestrições alimentares: ${form.dietary || 'Não informado'}\nObservações: ${form.notes || 'Sem observações'}`;
     window.open(SITE.whatsappLink(message), '_blank', 'noopener,noreferrer');
   };
   return (
@@ -26,6 +26,7 @@ export function QuoteForm() {
         <label>Horário<input type="time" value={form.time} onChange={e => update('time', e.target.value)} /></label>
         <label>Número de convidados<input required type="number" min="1" value={form.guests} onChange={e => update('guests', e.target.value)} placeholder="Ex.: 100" /></label>
         <label className="wide">Tipo de evento<select required value={form.type} onChange={e => update('type', e.target.value)}><option value="">Selecione</option><option>Coffee Break Corporativo</option><option>Evento Corporativo</option><option>Evento Esportivo</option><option>Catering Corporativo</option><option>Cocktail</option><option>Outro</option></select></label>
+        <label className="wide">Restrições alimentares<input value={form.dietary} onChange={e => update('dietary', e.target.value)} placeholder="Ex.: vegetarianos, sem lactose, sem glúten" /></label>
         <label className="wide">Observações<textarea value={form.notes} onChange={e => update('notes', e.target.value)} placeholder="Conte-nos mais sobre o evento" rows={4} /></label>
         <button className="button button-gold wide" type="submit">Enviar pelo WhatsApp <span>↗</span></button>
       </form>
