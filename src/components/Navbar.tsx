@@ -4,7 +4,7 @@ import { SITE } from '../config/site';
 const links = [
   ['Início', '/'],
   ['Coffee Break', '/coffee-break'],
-  ['Eventos Esportivos', '/#catering'],
+  ['Eventos Esportivos', '/eventos-esportivos'],
   ['Catering Corporativo', '/#catering'],
   ['Eventos Corporativos', '/#catering'],
   ['Portfólio', '/#portfolio'],

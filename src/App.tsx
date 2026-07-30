@@ -11,6 +11,7 @@ import { QuoteForm } from './components/QuoteForm';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { CoffeeBreakPage } from './pages/CoffeeBreakPage';
+import { SportsEventsPage } from './pages/SportsEventsPage';
 
 function HomePage() {
   return <><Navbar /><main><Hero /><BrandIntro /><Hospitality /><Experience /><Method /><Structure /><Portfolio /><Audiences /><QuoteForm /></main><Footer /><FloatingWhatsApp /></>;
@@ -18,5 +19,7 @@ function HomePage() {
 
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, '') || '/';
-  return path === '/coffee-break' ? <CoffeeBreakPage /> : <HomePage />;
+  if (path === '/coffee-break') return <CoffeeBreakPage />;
+  if (path === '/eventos-esportivos') return <SportsEventsPage />;
+  return <HomePage />;
 }

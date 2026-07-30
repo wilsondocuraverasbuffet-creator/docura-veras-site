@@ -8,7 +8,7 @@ export function Hero() {
         <h1>Especialistas em Catering Corporativo.</h1>
         <p className="hero-lead">Coffee breaks, eventos corporativos e soluções gastronômicas para empresas que valorizam excelência, organização e cuidado em cada detalhe.</p>
         <div className="hero-actions">
-          <a className="button button-gold" href="#contato">Solicitar orçamento</a>
+          <a className="button button-gold" href="#contato">Solicitar proposta personalizada</a>
           <a className="text-link light-link" href="#catering">Conhecer nossas soluções <span>↘</span></a>
         </div>
       </div>
